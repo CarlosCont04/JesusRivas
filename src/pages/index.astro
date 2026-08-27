@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Story from '../components/Story.astro';
+import Impact from '../components/Impact.astro';
+import Ventures from '../components/Ventures.astro';
+import Books from '../components/Books.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Jesús Rivas — Empresario, autor y conferencista"
+  description="Jesús Rivas impulsa empresas y líderes en América Latina a través de tecnología, estrategia y una visión profundamente humana."
+>
+  <Header />
+  <main id="contenido">
+    <Hero />
+    <Story />
+    <Impact />
+    <Ventures />
+    <Books />
+    <Contact />
+  </main>
+  <Footer />
+
+  <script>
+    const header = document.querySelector('[data-header]');
+    const menuToggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+    const mobileNav = document.querySelector<HTMLElement>('[data-mobile-nav]');
+
+    const closeMenu = () => {
+      if (!menuToggle || !mobileNav) return;
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileNav.hidden = true;
+      document.body.classList.remove('menu-open');
+    };
+
+    menuToggle?.addEventListener('click', () => {
+      if (!mobileNav) return;
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      mobileNav.hidden = isOpen;
+      document.body.classList.toggle('menu-open', !isOpen);
+    });
+
+    mobileNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reveals = document.querySelectorAll('[data-reveal]');
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      reveals.forEach((element) => element.classList.add('is-visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -40px' });
+      reveals.forEach((element) => observer.observe(element));
+    }
+  </script>
+</BaseLayout>

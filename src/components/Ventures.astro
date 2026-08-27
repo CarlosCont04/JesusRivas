@@ -1,0 +1,20 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { ventures } from '../data/site';
+---
+
+<section class="ventures section" id="empresas">
+  <div class="shell">
+    <SectionHeading eyebrow="Ecosistema empresarial" title="Ideas que se convierten en soluciones." copy="Proyectos creados para acompañar la transformación digital desde la estrategia hasta la implementación." />
+    <div class="venture-grid">
+      {ventures.map((venture) => (
+        <a class:list={['venture-card', { 'venture-featured': venture.featured }]} href={venture.href} target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="card-index">{venture.index}</span>
+          <img src={venture.image} alt={venture.name} width={venture.width} height={venture.height} loading="lazy" />
+          <div><h3>{venture.title}</h3><p>{venture.copy}</p></div>
+          <span class="round-arrow" aria-hidden="true">↗</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

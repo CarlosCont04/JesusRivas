@@ -1,0 +1,62 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { milestones } from '../data/site';
+---
+
+<section class="intro section" id="trayectoria">
+  <div class="shell">
+    <SectionHeading eyebrow="Trayectoria" title="La experiencia importa cuando se convierte en dirección." copy="Más de dos décadas conectando conocimiento técnico, visión empresarial y desarrollo humano para acompañar procesos de cambio reales." />
+
+    <div class="intro-grid">
+      <figure class="editorial-photo" data-reveal>
+        <img src="/media/jesus-rivas-conversation.webp" alt="Jesús Rivas durante una conversación de negocios" width="853" height="1280" loading="lazy" />
+        <figcaption>Escuchar antes de transformar.</figcaption>
+      </figure>
+
+      <div class="intro-story" data-reveal>
+        <p class="large-copy">Licenciado en Ciencias de la Computación por la Universidad Central de Venezuela, Jesús ha dedicado su carrera a traducir la complejidad tecnológica en oportunidades de negocio.</p>
+        <p>Como cofundador del grupo tecnológico eSoft LATAM, ha impulsado soluciones de alta tecnología en América Latina desde 2006. Su trabajo combina estrategia, innovación y un enfoque cercano a las personas que hacen posible cada empresa.</p>
+        <blockquote>“La tecnología transforma cuando entiende primero a las personas.”</blockquote>
+      </div>
+
+      <div class="stats" data-reveal aria-label="Datos de trayectoria">
+        <div><strong>2006</strong><span>Inicio de eSoft LATAM</span></div>
+        <div><strong>20+</strong><span>Años de experiencia</span></div>
+        <div><strong>LATAM</strong><span>Visión regional</span></div>
+      </div>
+    </div>
+
+    <div class="timeline" aria-labelledby="timeline-title">
+      <div class="timeline-heading" data-reveal>
+        <p class="eyebrow"><span></span>Capítulos</p>
+        <h3 id="timeline-title">Una trayectoria construida paso a paso.</h3>
+      </div>
+      <ol class="timeline-list">
+        {milestones.map((milestone) => (
+          <li data-reveal>
+            <span class="timeline-year">{milestone.year}</span>
+            <div><h4>{milestone.title}</h4><p>{milestone.copy}</p></div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline { margin-top: clamp(88px, 11vw, 150px); display: grid; grid-template-columns: .65fr 1.35fr; gap: clamp(44px, 8vw, 110px); }
+  .timeline-heading h3 { max-width: 420px; margin: 0; font-family: var(--display); font-size: clamp(2rem, 3.6vw, 3.7rem); line-height: 1.05; letter-spacing: -.045em; }
+  .timeline-list { position: relative; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .timeline-list::before { content: ''; position: absolute; inset: 0 auto 0 66px; width: 1px; background: var(--line); }
+  .timeline-list li { position: relative; display: grid; grid-template-columns: 68px 1fr; gap: 28px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .timeline-list li::before { content: ''; position: absolute; top: 34px; left: 62px; width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 6px var(--paper); }
+  .timeline-year { color: var(--brass); font-family: var(--display); font-size: .78rem; font-weight: 700; }
+  .timeline-list h4 { margin: 0 0 8px; font-family: var(--display); font-size: 1.35rem; }
+  .timeline-list p { max-width: 620px; margin: 0; color: rgba(10,15,26,.66); }
+  @media (max-width: 780px) {
+    .timeline { grid-template-columns: 1fr; }
+    .timeline-list li { grid-template-columns: 58px 1fr; }
+    .timeline-list::before { left: 56px; }
+    .timeline-list li::before { left: 52px; }
+  }
+</style>

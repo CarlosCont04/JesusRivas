@@ -1,0 +1,17 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  copy?: string;
+  light?: boolean;
+}
+const { eyebrow, title, copy, light = false } = Astro.props;
+---
+
+<div class:list={['section-heading', { light }]} data-reveal>
+  <p class="eyebrow"><span></span>{eyebrow}</p>
+  <div class="section-heading-grid">
+    <h2>{title}</h2>
+    {copy && <p>{copy}</p>}
+  </div>
+</div>

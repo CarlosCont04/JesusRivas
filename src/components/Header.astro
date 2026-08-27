@@ -1,0 +1,27 @@
+---
+import { navigation as links } from '../data/site';
+---
+
+<header class="site-header" data-header>
+  <div class="shell header-inner">
+    <a class="brand" href="#inicio" aria-label="Jesús Rivas — inicio">
+      <span class="brand-mark" aria-hidden="true">JR</span>
+      <span class="brand-name">Jesús Rivas</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+
+    <a class="button button-small header-cta" href="#contacto">Conversemos</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle>
+      <span class="sr-only">Abrir menú</span>
+      <span></span><span></span>
+    </button>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegación móvil" data-mobile-nav hidden>
+    {links.map((link) => <a href={link.href}>{link.label}</a>)}
+    <a href="#contacto">Conversemos <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>

@@ -1,0 +1,41 @@
+---
+import { social } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="shell footer-main">
+    <div>
+      <a class="brand footer-brand" href="#inicio"><span class="brand-mark">JR</span><span class="brand-name">Jesús Rivas</span></a>
+      <p>Empresario · Autor · Conferencista</p>
+    </div>
+    <div class="footer-links">
+      <p class="footer-label">Explorar</p>
+      <a href="#trayectoria">Trayectoria</a><a href="#impacto">Impacto</a><a href="#empresas">Empresas</a><a href="#libros">Libros</a>
+    </div>
+    <div class="footer-links">
+      <p class="footer-label">Conectar</p>
+      {social.map((item) => <a href={item.href} target="_blank" rel="noopener noreferrer">{item.label}</a>)}
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© {year} Jesús Rivas · eSoft LATAM</p>
+    <nav aria-label="Enlaces legales"><a href="/aviso-de-privacidad">Aviso de privacidad</a><a href="/terminos">Política y términos</a></nav>
+  </div>
+</footer>
+
+<style>
+  .footer-main { display: grid; grid-template-columns: 1.3fr .6fr .6fr; gap: 56px; padding-block: 70px; }
+  .footer-main > div:first-child > p { margin: 18px 0 0; color: rgba(255,255,255,.5); font-size: .78rem; }
+  .footer-links { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; font-size: .78rem; }
+  .footer-label { margin: 0 0 8px; color: var(--brass-light); font-size: .65rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+  .footer-links a:hover { color: var(--cyan); }
+  .footer-bottom { display: flex; justify-content: space-between; gap: 24px; padding-block: 24px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.45); font-size: .68rem; }
+  .footer-bottom p { margin: 0; }
+  .footer-bottom nav { display: flex; flex-wrap: wrap; gap: 24px; }
+  @media (max-width: 680px) {
+    .footer-main { grid-template-columns: 1fr 1fr; }
+    .footer-main > div:first-child { grid-column: 1 / -1; }
+    .footer-bottom { flex-direction: column; }
+  }
+</style>

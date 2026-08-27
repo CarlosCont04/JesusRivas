@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Aviso de privacidad — Jesús Rivas" description="Página preliminar del aviso de privacidad del sitio de Jesús Rivas.">
+  <main class="legal-page" id="contenido">
+    <a href="/" class="legal-back">← Volver al sitio</a>
+    <p class="eyebrow"><span></span>Documento legal</p>
+    <h1>Aviso de privacidad</h1>
+    <p>Esta página forma parte del prototipo. Antes de publicar el sitio deberá sustituirse por el aviso de privacidad revisado y aprobado por el responsable jurídico del proyecto.</p>
+    <p>El formulario de contacto deberá informar qué datos se recopilan, con qué finalidad, durante cuánto tiempo se conservan y cómo ejercer los derechos correspondientes.</p>
+  </main>
+</BaseLayout>
+
+<style>
+  .legal-page { width: min(760px, calc(100vw - 40px)); min-height: 100vh; margin: 0 auto; padding: 80px 0; background: var(--ink); color: var(--white); box-shadow: 0 0 0 100vmax var(--ink); clip-path: inset(0 -100vmax); }
+  .legal-back { display: inline-block; margin-bottom: 72px; color: var(--brass-light); }
+  h1 { margin: 0 0 32px; font-family: var(--display); font-size: clamp(3rem, 8vw, 6rem); }
+  p { color: rgba(255,255,255,.66); }
+</style>

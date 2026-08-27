@@ -1,0 +1,20 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { impactAreas } from '../data/site';
+---
+
+<section class="impact section" id="impacto">
+  <div class="shell">
+    <SectionHeading eyebrow="Áreas de impacto" title="Una mirada integral al crecimiento." copy="Tres formas de convertir experiencia en valor para organizaciones, líderes y emprendedores." light />
+    <div class="impact-list">
+      {impactAreas.map((item) => (
+        <article class="impact-item" data-reveal>
+          <span class="impact-number">{item.number}</span>
+          <div><span class="impact-tag">{item.tag}</span><h3>{item.title}</h3></div>
+          <p>{item.copy}</p>
+          <span class="impact-arrow" aria-hidden="true">↗</span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
