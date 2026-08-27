@@ -32,7 +32,7 @@ import { contact, social, whatsapp } from '../data/site';
           <div><dt>Ubicación</dt><dd>{contact.location}</dd></div>
         </dl>
         <div class="contact-social" aria-label="Redes sociales">
-          {social.map((item) => <a href={item.href} target="_blank" rel="noopener noreferrer">{item.label}</a>)}
+          {social.filter((item) => item.href).map((item) => <a href={item.href} target="_blank" rel="noopener noreferrer">{item.label}</a>)}
         </div>
         <div class="map-frame">
           <iframe title="Ubicación de la oficina de Jesús Rivas en Nápoles, Ciudad de México" src={contact.map} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

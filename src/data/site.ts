@@ -5,6 +5,7 @@ export const navigation = [
   { href: '#trayectoria', label: 'Trayectoria' },
   { href: '#impacto', label: 'Impacto' },
   { href: '#empresas', label: 'Empresas' },
+  { href: '#galeria', label: 'Galería' },
   { href: '#libros', label: 'Libros' },
 ];
 
@@ -77,11 +78,47 @@ export const ventures = [
   },
 ];
 
-export const social = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jesusalexisrivas/' },
-  { label: 'Instagram', href: 'https://www.instagram.com/soyjesusrivas' },
-  { label: 'TikTok', href: 'https://www.tiktok.com/@soyjesusrivas' },
+export const gallery = [
+  {
+    src: '/media/jesus-rivas-event.webp',
+    alt: 'Jesús Rivas durante un encuentro empresarial',
+    label: 'Encuentros',
+    copy: 'Conversaciones que conectan experiencia, propósito y nuevas oportunidades.',
+  },
+  {
+    src: '/media/jesus-rivas-conference.webp',
+    alt: 'Jesús Rivas impartiendo una conferencia',
+    label: 'Conferencias',
+    copy: 'Ideas que acercan la tecnología y la estrategia a líderes y equipos.',
+  },
+  {
+    src: '/media/jesus-rivas-speaking.webp',
+    alt: 'Jesús Rivas hablando ante una audiencia',
+    label: 'Escenario',
+    copy: 'Experiencias compartidas para movilizar decisiones y crecimiento.',
+  },
+  {
+    src: '/media/jesus-rivas-conversation.webp',
+    alt: 'Jesús Rivas en una conversación profesional',
+    label: 'Liderazgo',
+    copy: 'La escucha como punto de partida para transformar organizaciones.',
+  },
+  {
+    src: '/media/jesus-rivas-portrait.webp',
+    alt: 'Retrato profesional de Jesús Rivas',
+    label: 'Visión',
+    copy: 'Más de dos décadas construyendo soluciones de alto impacto en América Latina.',
+  },
 ];
+
+export const social = [
+  { key: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/share/1FDpoXeEHr/?mibextid=wwXIfr' },
+  { key: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/jesusalexisrivas/' },
+  { key: 'youtube', label: 'YouTube', href: '' },
+  { key: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/soyjesusrivas' },
+  { key: 'tiktok', label: 'TikTok', href: 'https://www.tiktok.com/@soyjesusrivas' },
+  { key: 'whatsapp', label: 'WhatsApp', href: whatsapp },
+] as const;
 
 export const contact = {
   email: 'contacto@soyjesusrivas.com',
