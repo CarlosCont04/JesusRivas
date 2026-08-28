@@ -179,7 +179,7 @@ export const gallery: GalleryItem[] = [
 export const social: SocialLink[] = [
   { key: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/share/1FDpoXeEHr/?mibextid=wwXIfr' },
   { key: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/jesusalexisrivas/' },
-  { key: 'youtube', label: 'YouTube', href: '' },
+  { key: 'youtube', label: 'YouTube', href: 'https://youtube.com/@pasionporlatecnologia?si=ij7wWSVjD8kdoypw' },
   { key: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/soyjesusrivas' },
   { key: 'tiktok', label: 'TikTok', href: 'https://www.tiktok.com/@soyjesusrivas' },
   { key: 'whatsapp', label: 'WhatsApp', href: whatsapp },
