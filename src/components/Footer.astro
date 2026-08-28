@@ -12,7 +12,7 @@ const year = new Date().getFullYear();
   </div>
   <div class="shell footer-main">
     <div>
-      <a class="brand footer-brand" href="#inicio"><span class="brand-mark">JR</span><span class="brand-name">Jesús Rivas</span></a>
+      <a class="brand footer-brand" href="#inicio" aria-label="Jesús Rivas — inicio"> <img class="brand-logo" src="/media/logo-light.png" alt="" width="220" height="134" /> </a>
       <p>Empresario · Autor · Conferencista</p>
     </div>
     <div class="footer-links">
@@ -43,6 +43,7 @@ const year = new Date().getFullYear();
 
 <style>
   footer { background: #060a12; }
+  .footer-brand .brand-logo { height: 48px; width: auto; }
   .footer-divider { overflow: hidden; border-block: 1px solid rgba(10,15,26,.2); background: var(--brass); color: var(--ink); }
   .footer-divider-inner { min-height: 78px; display: flex; align-items: center; justify-content: center; gap: clamp(18px, 4vw, 52px); font-family: var(--display); font-size: clamp(.68rem, 1.15vw, .88rem); font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
   .footer-divider i { width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .5; }

@@ -159,11 +159,11 @@ export const gallery: GalleryItem[] = [
     height: 900,
   },
   {
-    src: '/media/jesus-rivas-conversation.webp',
-    alt: 'Jesús Rivas en una conversación profesional',
+    src: '/media/jesus-rivas-leadership.webp',
+    alt: 'Jesús Rivas junto a lectores durante la firma de sus libros',
     label: 'Liderazgo',
     copy: 'La escucha como punto de partida para transformar organizaciones.',
-    width: 853,
+    width: 720,
     height: 1280,
   },
   {
