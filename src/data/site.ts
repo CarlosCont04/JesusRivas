@@ -129,7 +129,7 @@ export const ventures: Venture[] = [
     image: '/media/esoftpasion.webp',
     width: 225,
     height: 225,
-    featured: false,
+    featured: true,
   },
 ];
 
