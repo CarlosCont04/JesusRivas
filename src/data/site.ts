@@ -1,7 +1,62 @@
+// Contenido estructurado del sitio, tipado para que cualquier persona del
+// equipo pueda añadir o editar entradas (nuevo hito, nueva empresa, nueva
+// foto de galería) sin tocar los componentes de presentación.
+
+export interface NavItem {
+  href: string;
+  label: string;
+}
+
+export interface Milestone {
+  year: string;
+  title: string;
+  copy: string;
+}
+
+export interface ImpactArea {
+  number: string;
+  title: string;
+  copy: string;
+  tag: string;
+}
+
+export interface Venture {
+  index: string;
+  name: string;
+  title: string;
+  copy: string;
+  href: string;
+  image: string;
+  width: number;
+  height: number;
+  featured: boolean;
+}
+
+export interface GalleryItem {
+  src: string;
+  alt: string;
+  label: string;
+  copy: string;
+  width: number;
+  height: number;
+}
+
+export interface SocialLink {
+  key: 'facebook' | 'linkedin' | 'youtube' | 'instagram' | 'tiktok' | 'whatsapp';
+  label: string;
+  href: string;
+}
+
+export interface ContactInfo {
+  email: string;
+  location: string;
+  map: string;
+}
+
 export const whatsapp =
   'https://wa.me/525564604183?text=Hola%20Jes%C3%BAs%2C%20me%20gustar%C3%ADa%20conversar%20sobre%20una%20oportunidad.';
 
-export const navigation = [
+export const navigation: NavItem[] = [
   { href: '#trayectoria', label: 'Trayectoria' },
   { href: '#impacto', label: 'Impacto' },
   { href: '#empresas', label: 'Empresas' },
@@ -9,7 +64,7 @@ export const navigation = [
   { href: '#libros', label: 'Libros' },
 ];
 
-export const milestones = [
+export const milestones: Milestone[] = [
   {
     year: 'Origen',
     title: 'Ciencias de la Computación',
@@ -32,7 +87,7 @@ export const milestones = [
   },
 ];
 
-export const impactAreas = [
+export const impactAreas: ImpactArea[] = [
   {
     number: '01',
     title: 'Estrategia y transformación',
@@ -53,7 +108,7 @@ export const impactAreas = [
   },
 ];
 
-export const ventures = [
+export const ventures: Venture[] = [
   {
     index: '01 / 02',
     name: 'NEDIMI',
@@ -78,49 +133,59 @@ export const ventures = [
   },
 ];
 
-export const gallery = [
+export const gallery: GalleryItem[] = [
   {
     src: '/media/jesus-rivas-event.webp',
     alt: 'Jesús Rivas durante un encuentro empresarial',
     label: 'Encuentros',
     copy: 'Conversaciones que conectan experiencia, propósito y nuevas oportunidades.',
+    width: 720,
+    height: 923,
   },
   {
     src: '/media/jesus-rivas-conference.webp',
     alt: 'Jesús Rivas impartiendo una conferencia',
     label: 'Conferencias',
     copy: 'Ideas que acercan la tecnología y la estrategia a líderes y equipos.',
+    width: 853,
+    height: 727,
   },
   {
     src: '/media/jesus-rivas-speaking.webp',
     alt: 'Jesús Rivas hablando ante una audiencia',
     label: 'Escenario',
     copy: 'Experiencias compartidas para movilizar decisiones y crecimiento.',
+    width: 1600,
+    height: 900,
   },
   {
     src: '/media/jesus-rivas-conversation.webp',
     alt: 'Jesús Rivas en una conversación profesional',
     label: 'Liderazgo',
     copy: 'La escucha como punto de partida para transformar organizaciones.',
+    width: 853,
+    height: 1280,
   },
   {
     src: '/media/jesus-rivas-portrait.webp',
     alt: 'Retrato profesional de Jesús Rivas',
     label: 'Visión',
     copy: 'Más de dos décadas construyendo soluciones de alto impacto en América Latina.',
+    width: 1600,
+    height: 2133,
   },
 ];
 
-export const social = [
+export const social: SocialLink[] = [
   { key: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/share/1FDpoXeEHr/?mibextid=wwXIfr' },
   { key: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/jesusalexisrivas/' },
   { key: 'youtube', label: 'YouTube', href: '' },
   { key: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/soyjesusrivas' },
   { key: 'tiktok', label: 'TikTok', href: 'https://www.tiktok.com/@soyjesusrivas' },
   { key: 'whatsapp', label: 'WhatsApp', href: whatsapp },
-] as const;
+];
 
-export const contact = {
+export const contact: ContactInfo = {
   email: 'contacto@soyjesusrivas.com',
   location: 'Montecito 38, Piso 33, Nápoles, CDMX',
   map: 'https://www.google.com/maps?q=Montecito%2038%20Piso%2033%20N%C3%A1poles%20CDMX&output=embed',

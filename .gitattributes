@@ -1,3 +1,6 @@
+# Finales de línea consistentes entre sistemas operativos del equipo
+* text=auto eol=lf
+
 # Recursos multimedia administrados con Git LFS
 *.png filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
