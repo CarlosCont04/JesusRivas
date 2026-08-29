@@ -176,6 +176,31 @@ export const gallery: GalleryItem[] = [
   },
 ];
 
+export const books: BookItem[] = [
+  {
+    id: 'la-atienda',
+    title: 'El que tenga tienda, que la atienda',
+    description: 'Estrategias prácticas para mejorar la atención y fortalecer el negocio.',
+    image: '/media/libro-atienda.webp',
+    alt: 'Portada del libro El que tenga tienda, que la atienda',
+    width: 977,
+    height: 1466,
+    href: 'https://www.amazon.com.mx/que-tenga-tienda-atienda-Spanish/dp/B0CGVN2NMS',
+    position: 'front',
+  },
+  {
+    id: 'no-la-pierda',
+    title: 'El que tenga tienda, que no la pierda',
+    description: 'Una guía para proteger el legado y dar continuidad a la empresa familiar.',
+    image: '/media/libro-no-la-pierda.webp',
+    alt: 'Portada del libro El que tenga tienda, que no la pierda',
+    width: 491,
+    height: 744,
+    href: 'https://us.amazon.com/que-tenga-tienda-pierda-familiares/dp/9689717545',
+    position: 'back',
+  },
+];
+
 export const social: SocialLink[] = [
   { key: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/share/1FDpoXeEHr/?mibextid=wwXIfr' },
   { key: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/jesusalexisrivas/' },
@@ -189,4 +214,15 @@ export const contact: ContactInfo = {
   email: 'contacto@soyjesusrivas.com',
   location: 'Montecito 38, Piso 33, Nápoles, CDMX',
   map: 'https://www.google.com/maps?q=Montecito%2038%20Piso%2033%20N%C3%A1poles%20CDMX&output=embed',
+};
+export interface BookItem {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  width: number;
+  height: number;
+  href: string;
+  position: 'front' | 'back';
 };
