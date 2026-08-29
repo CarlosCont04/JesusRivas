@@ -1,5 +1,14 @@
 ---
 import { whatsapp } from '../data/site';
+
+const marqueeItems = [
+  'Estrategia',
+  'Innovación',
+  'Liderazgo',
+  'Tecnología',
+  'Transformación',
+  'Propósito',
+];
 ---
 
 <section class="hero" id="inicio" aria-labelledby="hero-title">
@@ -25,6 +34,17 @@ import { whatsapp } from '../data/site';
     </div>
   </div>
   <div class="hero-marquee" aria-hidden="true">
-    <div>ESTRATEGIA <span>✦</span> INNOVACIÓN <span>✦</span> LIDERAZGO <span>✦</span> TECNOLOGÍA <span>✦</span> ESTRATEGIA <span>✦</span> INNOVACIÓN <span>✦</span></div>
+    <div class="hero-marquee-track">
+      {[0, 1].map(() => (
+        <div class="hero-marquee-group">
+          {marqueeItems.map((item) => (
+            <>
+              <span class="hero-marquee-item">{item}</span>
+              <span class="hero-marquee-separator">✦</span>
+            </>
+          ))}
+        </div>
+      ))}
+    </div>
   </div>
 </section>
