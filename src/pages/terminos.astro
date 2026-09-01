@@ -1,14 +1,43 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const sections = [
+  {
+    title: '1. Propiedad intelectual',
+    body: 'Todo el contenido de este sitio (textos, logotipos, imágenes y material gráfico) es propiedad de Jesús Rivas o de sus licenciantes y está protegido por las leyes de propiedad intelectual. Queda prohibida su reproducción sin autorización previa.',
+  },
+  {
+    title: '2. Uso del sitio',
+    body: 'La información proporcionada es para fines generales y de información sobre los servicios de mentoría, conferencias y libros. Nos reservamos el derecho de modificar el contenido sin previo aviso.',
+  },
+  {
+    title: '3. Limitación de responsabilidad',
+    body: 'Aunque nos esforzamos por mantener la información actualizada, no garantizamos la exactitud completa o idoneidad de la información para un propósito particular. El uso de la información de este sitio es bajo su propio riesgo.',
+  },
+];
 ---
 
-<BaseLayout title="Política y términos — Jesús Rivas" description="Página preliminar de términos del sitio de Jesús Rivas.">
+<BaseLayout title="Política y términos — Jesús Rivas" description="Términos y condiciones de uso del sitio de Jesús Rivas.">
   <main class="legal-page" id="contenido">
     <a href="/" class="legal-back">← Volver al sitio</a>
     <p class="eyebrow"><span></span>Documento legal</p>
     <h1>Política y términos</h1>
-    <p>Esta página forma parte del prototipo. El contenido definitivo deberá ser redactado o validado por el responsable jurídico antes de la publicación.</p>
-    <p>La versión final deberá cubrir el uso del sitio, enlaces externos, propiedad intelectual, limitaciones de responsabilidad y condiciones aplicables a los formularios.</p>
+
+    <p>
+      Bienvenido al sitio web de Jesús Rivas. Al navegar y utilizar este
+      sitio, usted acepta cumplir con los siguientes términos y condiciones
+      de uso, los cuales, junto con nuestra política de privacidad, rigen
+      la relación entre usted y nosotros en relación con este sitio web.
+    </p>
+
+    <div class="legal-sections">
+      {sections.map((section) => (
+        <section>
+          <h2>{section.title}</h2>
+          <p>{section.body}</p>
+        </section>
+      ))}
+    </div>
   </main>
 </BaseLayout>
 
@@ -17,4 +46,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .legal-back { display: inline-block; margin-bottom: 72px; color: var(--brass-light); }
   h1 { margin: 0 0 32px; font-family: var(--display); font-size: clamp(3rem, 8vw, 6rem); }
   p { color: rgba(255,255,255,.66); }
+  .legal-sections { margin-top: 48px; display: flex; flex-direction: column; gap: 36px; }
+  .legal-sections section { padding-top: 28px; border-top: 1px solid rgba(255,255,255,.14); }
+  h2 { margin: 0 0 12px; font-family: var(--display); font-size: 1.4rem; color: var(--brass-light); }
 </style>

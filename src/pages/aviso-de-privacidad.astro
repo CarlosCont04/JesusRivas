@@ -1,14 +1,39 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { contact } from '../data/site';
 ---
 
-<BaseLayout title="Aviso de privacidad — Jesús Rivas" description="Página preliminar del aviso de privacidad del sitio de Jesús Rivas.">
+<BaseLayout title="Aviso de privacidad — Jesús Rivas" description="Aviso de privacidad del sitio de Jesús Rivas, en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.">
   <main class="legal-page" id="contenido">
     <a href="/" class="legal-back">← Volver al sitio</a>
     <p class="eyebrow"><span></span>Documento legal</p>
     <h1>Aviso de privacidad</h1>
-    <p>Esta página forma parte del prototipo. Antes de publicar el sitio deberá sustituirse por el aviso de privacidad revisado y aprobado por el responsable jurídico del proyecto.</p>
-    <p>El formulario de contacto deberá informar qué datos se recopilan, con qué finalidad, durante cuánto tiempo se conservan y cómo ejercer los derechos correspondientes.</p>
+
+    <p>
+      En cumplimiento con la Ley Federal de Protección de Datos Personales en
+      Posesión de los Particulares, Jesús Rivas informa que los datos
+      personales proporcionados en este sitio web (nombre, correo
+      electrónico y teléfono) serán utilizados exclusivamente para fines de
+      contacto, seguimiento a solicitudes de servicios y envío de
+      información relevante sobre mentorías y conferencias.
+    </p>
+
+    <p>
+      Sus datos son tratados con estricta confidencialidad y no serán
+      transferidos a terceros sin su consentimiento previo, salvo las
+      excepciones previstas por la ley. Implementamos medidas de seguridad
+      administrativas, técnicas y físicas para proteger su información
+      contra daño, pérdida, alteración, destrucción o el uso, acceso o
+      tratamiento no autorizado.
+    </p>
+
+    <p>
+      Usted tiene derecho a acceder, rectificar y cancelar sus datos
+      personales, así como a oponerse al tratamiento de los mismos o
+      revocar el consentimiento que para tal fin nos haya otorgado. Para
+      ejercer estos derechos, puede enviar una solicitud al correo
+      electrónico <a href={`mailto:${contact.email}`}>{contact.email}</a>.
+    </p>
   </main>
 </BaseLayout>
 
@@ -17,4 +42,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .legal-back { display: inline-block; margin-bottom: 72px; color: var(--brass-light); }
   h1 { margin: 0 0 32px; font-family: var(--display); font-size: clamp(3rem, 8vw, 6rem); }
   p { color: rgba(255,255,255,.66); }
+  p + p { margin-top: 22px; }
+  p a { color: var(--cyan); }
 </style>
