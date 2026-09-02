@@ -25,7 +25,26 @@ import { navigation as links } from '../data/site';
     <a href="#contacto">Conversemos <span aria-hidden="true">↗</span></a>
   </nav>
 
-  <style> .brand-logo { display: block; height: 40px; width: auto; } .brand-logo-dark { display: none; } .site-header.is-scrolled .brand-logo-light { display: none; } .site-header.is-scrolled .brand-logo-dark { display: block; } 
-  </style>
+  <style>
+  .brand-logo {
+    display: block;
+    width: auto;
+    height: 40px;
+  }
+
+  .brand-logo-dark {
+    display: none;
+  }
+
+  .site-header.is-scrolled .brand-logo-light,
+  .site-header.menu-is-open .brand-logo-light {
+    display: none;
+  }
+
+  .site-header.is-scrolled .brand-logo-dark,
+  .site-header.menu-is-open .brand-logo-dark {
+    display: block;
+  }
+</style>
 
 </header>
