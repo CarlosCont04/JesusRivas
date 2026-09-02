@@ -70,6 +70,20 @@ import { books } from '../data/site';
       </span>
     </div>
   </div>
+
+  <div class="shell books-extra" data-reveal>
+    <p class="books-extra-eyebrow">Más recursos</p>
+    <div class="books-extra-row">
+      <p>
+        ¿Buscas más herramientas para atender —y no perder— tu tienda? En&nbsp;
+        <strong>"El que tenga tienda"</strong> encontrarás contenido,
+        comunidad y recursos complementarios a los libros.
+      </p>
+      <a class="text-link" href="https://elquetengatienda.com/" target="_blank" rel="noopener noreferrer">
+        Visitar elquetengatienda.com <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <style>
@@ -175,6 +189,37 @@ import { books } from '../data/site';
     outline-offset: 6px;
   }
 
+  .books-extra {
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+
+  .books-extra-eyebrow {
+    margin: 0 0 16px;
+    color: var(--brass-dark);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .books-extra-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .books-extra-row p {
+    max-width: 560px;
+    margin: 0;
+    color: rgba(7, 27, 43, 0.65);
+  }
+
+  .books-extra-row strong { color: var(--ink); }
+
   @media (max-width: 520px) {
     .book-option {
       grid-template-columns: 28px 1fr auto;
@@ -185,4 +230,9 @@ import { books } from '../data/site';
       display: none;
     }
   }
+
+    @media (max-width: 680px) {
+    .books-extra-row { flex-direction: column; align-items: flex-start; }
+  }
+
 </style>

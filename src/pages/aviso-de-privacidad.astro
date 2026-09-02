@@ -35,7 +35,24 @@ import { contact } from '../data/site';
       electrónico <a href={`mailto:${contact.email}`}>{contact.email}</a>.
     </p>
   </main>
+
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Volver arriba">
+    <span aria-hidden="true">↑</span>
+  </button>
 </BaseLayout>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('[data-back-to-top]');
+  const toggleVisibility = () => btn?.classList.toggle('is-visible', window.scrollY > 320);
+
+  toggleVisibility();
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+
+  btn?.addEventListener('click', () => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+  });
+</script>
 
 <style>
   .legal-page { width: min(760px, calc(100vw - 40px)); min-height: 100vh; margin: 0 auto; padding: 80px 0; background: var(--ink); color: var(--white); box-shadow: 0 0 0 100vmax var(--ink); clip-path: inset(0 -100vmax); }
@@ -44,4 +61,31 @@ import { contact } from '../data/site';
   p { color: rgba(255,255,255,.66); }
   p + p { margin-top: 22px; }
   p a { color: var(--cyan); }
+
+  .back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 200;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--brass);
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--brass-light);
+    font-size: 1.3rem;
+    line-height: 1;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity .25s, transform .25s, background .25s, color .25s;
+  }
+  .back-to-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .back-to-top:hover, .back-to-top:focus-visible { background: var(--brass); color: var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .back-to-top { transition: opacity .01ms, background .01ms, color .01ms; }
+  }
 </style>
