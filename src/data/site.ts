@@ -41,6 +41,14 @@ export interface GalleryItem {
   height: number;
 }
 
+export interface PodcastResource {
+  title: string;
+  label: string;
+  description: string;
+  href: string;
+  linkLabel: string;
+}
+
 export interface SocialLink {
   key: 'facebook' | 'linkedin' | 'youtube' | 'instagram' | 'tiktok' | 'whatsapp';
   label: string;
@@ -198,6 +206,23 @@ export const books: BookItem[] = [
     height: 744,
     href: 'https://us.amazon.com/que-tenga-tienda-pierda-familiares/dp/9689717545',
     position: 'back',
+  },
+];
+
+export const podcasts: PodcastResource[] = [
+  {
+    title: 'eSoft · Pasión por la Tecnología',
+    label: 'Canal de YouTube',
+    description: 'Explora las conversaciones de eSoft sobre tecnología y negocios, un espacio para acercar la innovación a quienes construyen y dirigen empresas.',
+    href: 'https://www.youtube.com/@pasionporlatecnologia',
+    linkLabel: 'Ver canal de eSoft',
+  },
+  {
+    title: 'Sinergéticos con Jorge Serratos',
+    label: 'Episodio de podcast',
+    description: 'Jesús Rivas y Carolina Candedo conversan con Jorge Serratos sobre el reto de dejar de ser autoempleados dentro de su propia empresa y construir un negocio que no dependa de su presencia constante.',
+    href: 'https://www.youtube.com/watch?v=ldcDxe_HdNY&t=22s',
+    linkLabel: 'Ver episodio de Sinergéticos',
   },
 ];
 
